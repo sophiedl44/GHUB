@@ -1,0 +1,2203 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Brown";
+  src: url("../fonts/Brown-Bold.eot");
+  src: local("☺"), url("../fonts/Brown-Bold.woff") format("woff"), url("../fonts/Brown-Bold.ttf") format("truetype"), url("../fonts/Brown-Bold.svg") format("svg");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Brown";
+  src: url("../fonts/Brown-Light.eot");
+  src: local("☺"), url("../fonts/Brown-Light.woff") format("woff"), url("../fonts/Brown-Light.ttf") format("truetype"), url("../fonts/Brown-Light.svg") format("svg");
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Brown";
+  src: url("../fonts/Brown-Regular.eot");
+  src: local("☺"), url("../fonts/Brown-Regular.woff") format("woff"), url("../fonts/Brown-Regular.ttf") format("truetype"), url("../fonts/Brown-Regular.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+.title h2 {
+  font-size: 48px;
+  font-weight: 300;
+  line-height: 62px;
+  color: #32325d;
+}
+
+.subtitle h3 {
+  font-size: 30px;
+  color: #212240;
+  font-weight: 300;
+}
+
+.text p {
+  font-size: 23px;
+  font-weight: 300;
+  line-height: 32px;
+  color: #525f7f;
+}
+
+a.button {
+  width: 142px;
+  height: 42px;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.02px;
+  color: #fff;
+  box-shadow: -6.7px 7.4px 20px 0 rgba(111, 54, 255, 0.2);
+  background-color: #845cff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-duration: 0.4s;
+  position: relative;
+}
+a.button:hover {
+  background: #6944d8;
+  transition-duration: 0.4s;
+}
+a.button:active {
+  top: 3px;
+  transition-duration: 0.4s;
+}
+
+/*Обнуление*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+:focus, :active {
+  outline: none;
+}
+
+a:focus, a:active {
+  outline: none;
+}
+
+nav, footer, header, aside {
+  display: block;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input, button, textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a, a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*--------------------*/
+body, html {
+  height: 100%;
+  font-family: "Brown", sans-serif;
+}
+
+body._lock {
+  overflow: hidden;
+}
+
+.wrapper {
+  min-height: 100vh;
+}
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 30px 0px 0px 0px;
+}
+
+.header__container {
+  display: flex;
+  padding: 0 15px;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 46px;
+}
+
+.header__logo {
+  position: relative;
+  z-index: 5;
+}
+
+.menu__icon {
+  display: none;
+}
+
+.menu__list > li {
+  position: relative;
+  margin: 0px 0px 0px 35px;
+}
+
+.menu__link {
+  width: auto;
+  text-align: center;
+  font-size: 19px;
+  font-weight: bold;
+  color: #32325d;
+  position: relative;
+  transition-duration: 0.4s;
+}
+.menu__link:hover {
+  color: #191931;
+  transition-duration: 0.4s;
+}
+.menu__link:active {
+  top: 3px;
+  transition-duration: 0.4s;
+}
+
+.header__button {
+  margin: 0px 0px 0px 30px;
+}
+
+/*-----------------------*/
+body._touch .menu__list > li {
+  display: flex;
+  align-items: center;
+}
+
+body._touch .menu__link {
+  flex: 1 1 auto;
+}
+
+/*-----------------------*/
+@media (min-width: 767px) {
+  .menu__list {
+    display: flex;
+    align-items: center;
+  }
+
+  .menu__list > li {
+    padding: 10px 0;
+  }
+
+  .menu__sub-list {
+    transform: translate(0px, 10%);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease 0s;
+  }
+
+  .header__columns {
+    display: flex;
+  }
+}
+@media (max-width: 767px) {
+  .menu__icon {
+    z-index: 5;
+    display: block;
+    position: relative;
+    width: 30px;
+    height: 18px;
+    cursor: pointer;
+    margin: 0px 0px 0px 20px;
+  }
+
+  .menu__icon span,
+.menu__icon::before,
+.menu__icon::after {
+    left: 0;
+    position: absolute;
+    height: 10%;
+    width: 100%;
+    transition: all 0.3s ease 0s;
+    background-color: #1b103d;
+  }
+
+  .menu__icon::before,
+.menu__icon::after {
+    content: "";
+  }
+
+  .menu__icon::before {
+    top: 0;
+  }
+
+  .menu__icon::after {
+    bottom: 0;
+  }
+
+  .menu__icon span {
+    top: 50%;
+    transform: scale(1) translate(0px, -50%);
+  }
+
+  .menu__icon._active span {
+    transform: scale(0) translate(0px, -50%);
+  }
+
+  .menu__icon._active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0px, -50%);
+  }
+
+  .menu__icon._active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0px, 50%);
+  }
+
+  .menu__body {
+    position: fixed;
+    left: 0;
+    top: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(215, 202, 255, 0.8);
+    padding: 120px 30px 30px 30px;
+    transition: top 0.3s ease 0s;
+    overflow: auto;
+  }
+
+  .menu__body._active {
+    top: 0;
+  }
+
+  .menu__body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 50px;
+    z-index: 2;
+  }
+
+  .menu__list > li {
+    flex-wrap: wrap;
+    margin: 0px 0px 30px 0px;
+  }
+  .menu__list > li:last-child {
+    margin-bottom: 0;
+  }
+
+  .menu__link {
+    font-size: 19px;
+  }
+
+  .header__menu {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+
+  .header__logo img {
+    width: 100%;
+    height: 40px;
+  }
+
+  .header {
+    padding: 15px 0px 0px 0px;
+  }
+}
+@media (max-width: 480px) {
+  .header__button {
+    margin: 0;
+  }
+  .header__button a {
+    width: 105px;
+    height: 40px;
+  }
+
+  .header__logo img {
+    width: 90%;
+    height: 40px;
+  }
+}
+.welcome {
+  padding: 80px 15px 0px 15px;
+  background: url("../img/welcome_bg.png") 0 0 no-repeat;
+  overflow: hidden;
+}
+
+.welcome__row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome__description {
+  width: 38%;
+  padding: 0px 0px 110px 0px;
+}
+
+.welcome__title {
+  margin: 0px 0px 30px 0px;
+}
+.welcome__title h1 {
+  font-size: 48px;
+  font-weight: bold;
+  color: #32325d;
+  line-height: 62px;
+}
+
+.welcome__text {
+  margin: 0px 0px 20px 0px;
+}
+.welcome__text p {
+  width: 99%;
+}
+
+.welcome__columns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.welcome__question a {
+  font-size: 19px;
+  color: #32325d;
+}
+
+.welcome__image {
+  width: 60%;
+}
+.welcome__image img {
+  width: 100%;
+  height: 850px;
+  object-fit: cover;
+  object-position: 0 40%;
+  margin: 0px 0px 0px 160px;
+  transform: translate(0, -80px);
+}
+
+@media (min-width: 1200px) and (max-width: 1366px) {
+  .welcome__image img {
+    width: 100%;
+    height: 850px;
+    object-fit: cover;
+    object-position: 0 40%;
+    margin: 0px 0px 0px 115px;
+    transform: translate(0, -80px);
+  }
+
+  .welcome__description {
+    width: 40%;
+    padding: 0px 0px 100px 0px;
+  }
+}
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .welcome__image img {
+    width: 100%;
+    height: 850px;
+    object-fit: cover;
+    object-position: 0 40%;
+    margin: 0px 0px 0px 70px;
+    transform: translate(0, -80px);
+  }
+
+  .welcome__description {
+    width: 47%;
+    padding: 0px 0px 100px 0px;
+  }
+
+  .welcome__text p {
+    width: 100%;
+  }
+}
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .welcome__image {
+    width: 60%;
+  }
+  .welcome__image img {
+    width: 100%;
+    height: 850px;
+    object-fit: cover;
+    object-position: 0 40%;
+    margin: 0px 0px 0px 15px;
+    transform: translate(0, -80px);
+  }
+
+  .welcome__description {
+    width: 47%;
+    padding: 0px 0px 100px 0px;
+  }
+
+  .welcome__text p {
+    width: 100%;
+  }
+
+  .welcome__columns {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .welcome__button {
+    margin: 0px 0px 15px 0px;
+  }
+
+  .welcome__title h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #32325d;
+    line-height: 54px;
+  }
+
+  .welcome__text p {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 29px;
+    color: #525f7f;
+  }
+}
+/* Landscape phones and portrait tablets, телефоны лопаты */
+@media (max-width: 767px) {
+  .welcome {
+    background: none;
+  }
+
+  .welcome__row {
+    flex-direction: column-reverse;
+  }
+
+  .welcome__image {
+    width: 105%;
+    height: 320px;
+  }
+  .welcome__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0px 0px 0px 0px;
+    transform: translate(0, -80px);
+  }
+
+  .welcome__description {
+    width: 100%;
+    transform: translate(0, -80px);
+  }
+
+  .welcome__text p {
+    width: 480px;
+  }
+
+  .welcome__columns {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .welcome__button {
+    margin: 0px 15px 0px 0px;
+  }
+
+  .welcome__title h1 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #32325d;
+    line-height: 54px;
+  }
+
+  .welcome__text p {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 29px;
+    color: #525f7f;
+  }
+
+  .welcome__columns {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+/* Portrait phones and smaller типа моего 6s */
+@media (max-width: 480px) {
+  .welcome {
+    padding: 0px 15px 0px 15px;
+    background: url(../img/welcome_bg.png) 0 100px no-repeat;
+    overflow: hidden;
+  }
+
+  .welcome__title {
+    margin: 0px 0px 20px 0px;
+  }
+  .welcome__title h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #32325d;
+    line-height: 45px;
+  }
+
+  .welcome__image {
+    width: 110%;
+    padding: 0px 0px 76% 0px;
+    overflow: hidden;
+    position: relative;
+    height: 250px;
+    background-color: #f0effd;
+  }
+  .welcome__image img {
+    width: 105%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0px);
+    object-position: -10px -17px;
+  }
+
+  .welcome__description {
+    width: 100%;
+    padding: 0px 0px 0px 0px;
+    transform: translate(0, 0px);
+  }
+
+  .welcome__text p {
+    width: 100%;
+  }
+
+  .welcome__columns {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .welcome__button {
+    margin: 0px 0px 15px 0px;
+  }
+}
+.improve {
+  background: url("../img/improve_bg.png") -260px -50px no-repeat;
+  padding: 40px 15px 0 15px;
+  margin: -270px 0 180px 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.improve__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 41%);
+  grid-template-rows: repeat(2, 46%);
+  grid-row-gap: 50px;
+  grid-column-gap: 100px;
+}
+
+.improve__column {
+  box-shadow: -6.7px 7.4px 20px 0 rgba(212, 212, 250, 0.2);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.improve-item {
+  padding: 40px;
+}
+
+.improve__columntitle {
+  position: relative;
+  border-radius: 10px;
+}
+
+.improve-itemtitle {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.improve-item__title {
+  margin: 0px 0px 20px 0px;
+}
+
+.improve-item__text p {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 25px;
+  color: #525f7f;
+}
+
+.improve-item__image {
+  margin: 0px 0px 30px 0px;
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .improve__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 47%);
+    grid-template-rows: repeat(2, 46%);
+    grid-row-gap: 50px;
+    grid-column-gap: 50px;
+  }
+
+  .improve-item {
+    padding: 30px;
+  }
+
+  .improve-itemtitle {
+    padding: 30px;
+  }
+}
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .improve__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 46%);
+    grid-template-rows: repeat(2, 46%);
+    grid-row-gap: 30px;
+    grid-column-gap: 40px;
+  }
+
+  .improve-item {
+    padding: 30px;
+  }
+
+  .improve-itemtitle {
+    padding: 30px;
+  }
+
+  .improve-item__title h2 {
+    font-size: 40px;
+    font-weight: 300;
+    line-height: 45px;
+    color: #32325d;
+  }
+
+  .improve-item__text p {
+    line-height: 20px;
+  }
+
+  .improve-item__image {
+    margin: 0px 0px 20px 0px;
+  }
+}
+/* Landscape phones and portrait tablets, телефоны лопаты */
+@media (max-width: 767px) {
+  .improve {
+    margin: -270px 0 80px 0;
+  }
+
+  .improve__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: repeat(4, 15% 25% 25% 25%);
+    grid-row-gap: 20px;
+  }
+
+  .improve-item {
+    padding: 20px;
+  }
+
+  .improve-itemtitle {
+    padding: 20px;
+  }
+
+  .improve-item__title {
+    text-align: center;
+  }
+  .improve-item__title h2 {
+    font-size: 36px;
+    font-weight: 300;
+    line-height: 33px;
+    color: #32325d;
+  }
+
+  .improve-item__text {
+    display: flex;
+    justify-content: center;
+  }
+  .improve-item__text p {
+    width: 95%;
+    text-align: center;
+    line-height: 20px;
+  }
+
+  .improve-item__image {
+    margin: 0px 0px 20px 0px;
+  }
+
+  .improve {
+    background: url(../img/improve_bg.png) -50% -50px no-repeat;
+    padding: 40px 15px 0 15px;
+    margin: -170px 0 0 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  .improve-item__image {
+    text-align: center;
+  }
+}
+/* Portrait phones and smaller типа моего 6s */
+@media (max-width: 480px) {
+  .improve__grid {
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    grid-template-rows: repeat(4, 15% 26% 25% 25%);
+    grid-row-gap: 20px;
+  }
+
+  .improve {
+    background: url(../img/improve_bg.png) -50% -50px no-repeat;
+    padding: 90px 15px 40px 15px;
+    margin: 0px 0 0 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+
+  .improve-item__text {
+    display: flex;
+    justify-content: center;
+  }
+  .improve-item__text p {
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    line-height: 20px;
+  }
+
+  .improve-item__image {
+    margin: 0px 0px 15px 0px;
+  }
+  .improve-item__image img {
+    width: 100%;
+    height: 100px;
+    object-fit: contain;
+  }
+
+  .improve-item__title {
+    margin: 0px 0px 15px 0px;
+  }
+  .improve-item__title h3 {
+    font-size: 24px;
+  }
+
+  .improve-item__title {
+    margin: 0px 0px 15px 0px;
+  }
+  .improve-item__title h2 {
+    font-size: 27px;
+  }
+}
+/* Iphone 5 */
+.proof {
+  padding: 0px 15px 200px 15px;
+  margin: 0px 0px 100px 0px;
+}
+
+.proof__title {
+  text-align: center;
+  margin: 0px 0px 30px 0px;
+}
+
+.proof__text {
+  display: flex;
+  justify-content: center;
+  margin: 0px 0px 80px 0px;
+}
+.proof__text p {
+  width: 871px;
+  text-align: center;
+}
+
+.proof__grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(4, 250px);
+  grid-template-rows: repeat(3, 180px);
+  grid-column-gap: 50px;
+  grid-row-gap: 20px;
+}
+
+.proof-item__image {
+  text-align: center;
+  margin: 0px 0px 15px 0px;
+}
+.proof-item__image img {
+  width: 100%;
+  height: 60px;
+  object-fit: contain;
+}
+
+.proof-item__title {
+  text-align: center;
+  margin: 0px 0px 10px 0px;
+}
+.proof-item__title h3 {
+  font-size: 20px;
+  color: #212240;
+}
+
+.proof-item__text {
+  text-align: center;
+}
+.proof-item__text p {
+  font-size: 16px;
+  font-weight: 300;
+  color: #525f7f;
+  line-height: 20px;
+}
+
+@media (min-width: 1920px) {
+  .proof__grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 303px);
+    grid-template-rows: repeat(3, 180px);
+    grid-column-gap: 80px;
+    grid-row-gap: 70px;
+  }
+
+  .proof-item__image {
+    margin: 0px 0px 35px 0px;
+  }
+  .proof-item__image img {
+    width: 100%;
+    height: 80px;
+    object-fit: contain;
+  }
+
+  .proof-item__title {
+    text-align: center;
+    margin: 0px 0px 18px 0px;
+  }
+  .proof-item__title h3 {
+    font-size: 20px;
+    color: #212240;
+  }
+}
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1200px) {
+  .proof__grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 20%);
+    grid-template-rows: repeat(3, 160px);
+    grid-column-gap: 50px;
+    grid-row-gap: 40px;
+  }
+
+  .proof-item__title {
+    text-align: center;
+    margin: 0px 0px 15px 0px;
+  }
+  .proof-item__title h3 {
+    font-size: 18px;
+    color: #212240;
+  }
+
+  .proof-item__text {
+    text-align: center;
+  }
+  .proof-item__text p {
+    font-size: 14px;
+    font-weight: 300;
+    color: #525f7f;
+    line-height: 18px;
+  }
+
+  .proof__text {
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 60px 0px;
+  }
+}
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .proof__title {
+    margin: 0px 0px 20px 0px;
+  }
+  .proof__title h2 {
+    font-size: 40px;
+    line-height: 45px;
+  }
+
+  .proof__grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 20%);
+    grid-template-rows: repeat(3, auto);
+    grid-column-gap: 40px;
+    grid-row-gap: 30px;
+  }
+
+  .proof-item__title {
+    text-align: center;
+    margin: 0px 0px 10px 0px;
+  }
+  .proof-item__title h3 {
+    font-size: 16px;
+    color: #212240;
+  }
+
+  .proof-item__text {
+    text-align: center;
+  }
+  .proof-item__text p {
+    font-size: 14px;
+    font-weight: 300;
+    color: #525f7f;
+    line-height: 18px;
+  }
+
+  .proof__text {
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 60px 0px;
+  }
+}
+/* Landscape phones and portrait tablets, телефоны лопаты */
+@media (max-width: 767px) {
+  .proof {
+    padding: 0px 15px 40px 15px;
+    margin: 0px 0px 80px 0px;
+  }
+
+  .proof-item__image {
+    margin: 0px 0px 10px 0px;
+  }
+  .proof-item__image img {
+    width: 100%;
+    height: 50px;
+    object-fit: contain;
+  }
+
+  .proof__title {
+    margin: 0px 0px 20px 0px;
+  }
+  .proof__title h2 {
+    font-size: 36px;
+    line-height: 33px;
+  }
+
+  .proof__grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(4, 20%);
+    grid-template-rows: repeat(3, auto);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+  }
+
+  .proof-item__title {
+    text-align: center;
+    margin: 0px 0px 10px 0px;
+  }
+  .proof-item__title h3 {
+    font-size: 15px;
+    color: #212240;
+  }
+
+  .proof-item__text {
+    text-align: center;
+  }
+  .proof-item__text p {
+    font-size: 11px;
+    font-weight: 300;
+    color: #525f7f;
+    line-height: 12px;
+  }
+
+  .proof__text {
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 50px 0px;
+  }
+  .proof__text p {
+    width: 95%;
+    text-align: center;
+    line-height: 22px;
+    font-size: 18px;
+  }
+}
+/* Portrait phones and smaller типа моего 6s */
+@media (max-width: 480px) {
+  .proof {
+    padding: 0px 15px 20px 15px;
+    margin: 0px 0px 40px 0px;
+  }
+
+  .proof__grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 25%);
+    grid-template-rows: repeat(5, auto);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+  }
+
+  .proof__title {
+    margin: 0px 0px 20px 0px;
+  }
+  .proof__title h2 {
+    font-size: 27px;
+    line-height: 33px;
+  }
+
+  .proof__text {
+    display: flex;
+    justify-content: center;
+    margin: 0px 0px 50px 0px;
+  }
+  .proof__text p {
+    width: 100%;
+    text-align: center;
+    line-height: 20px;
+    font-size: 16px;
+  }
+
+  .proof-item__title {
+    text-align: center;
+    margin: 0px 0px 8px 0px;
+  }
+  .proof-item__title h3 {
+    font-size: 11px;
+    color: #212240;
+  }
+
+  .proof-item__text {
+    text-align: center;
+  }
+  .proof-item__text p {
+    font-size: 9px;
+    font-weight: 300;
+    color: #525f7f;
+    line-height: 10px;
+  }
+}
+/* Iphone 5 */
+.safety {
+  padding: 0 15px;
+  overflow: hidden;
+  margin: 0px 0px 100px 0px;
+}
+
+.safety__safety {
+  margin: 0px 0px 100px 0px;
+}
+
+.safety__commonrow {
+  display: flex;
+  justify-content: space-between;
+}
+
+.safety__first {
+  width: 51%;
+}
+
+.safety__title {
+  margin: 0px 0px 30px 0px;
+}
+.safety__title h2 {
+  width: 76%;
+}
+
+.safety__text {
+  margin: 0px 0px 40px 0px;
+}
+.safety__text p {
+  width: 80%;
+}
+
+.safety__row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 0px 40px 0px;
+}
+
+.safety-item__title {
+  margin: 0px 0px 20px 0px;
+}
+
+.safety-item__text p {
+  width: 75%;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.safety__rowtwo {
+  display: flex;
+  align-items: center;
+}
+
+.safety__button {
+  margin: 0px 30px 0px 0px;
+}
+
+.safety__question a {
+  font-size: 19px;
+  color: #32325d;
+}
+
+.safety__image {
+  overflow: hidden;
+  margin: 0px -65px 0px 0px;
+}
+.safety__image img {
+  width: 100%;
+  height: 462px;
+  object-fit: contain;
+}
+
+.move__commonrow {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+}
+
+.move__first {
+  width: 53%;
+}
+
+.move__title {
+  margin: 0px 0px 30px 0px;
+}
+
+.move__text {
+  margin: 0px 0px 40px 0px;
+}
+.move__text p {
+  width: 94%;
+}
+
+.move__row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 0px 40px 0px;
+}
+
+.safety-item__title {
+  margin: 0px 0px 20px 0px;
+}
+
+.move-item__text p {
+  width: 75%;
+  font-size: 16px;
+  line-height: 25px;
+}
+
+.move__image {
+  margin: 0px 40px 0px 0px;
+}
+.move__image img {
+  width: 100%;
+  height: 398px;
+  object-fit: contain;
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .safety__title h2 {
+    width: 100%;
+  }
+
+  .safety__text p {
+    width: 100%;
+  }
+
+  .safety__image img {
+    width: 100%;
+    height: 462px;
+    object-fit: cover;
+    object-position: 15px;
+  }
+
+  .safety__column {
+    margin: 0px 20px 0px 0px;
+  }
+  .safety__column:last-child {
+    margin: 0;
+  }
+
+  .safety-item__text p {
+    width: 98%;
+  }
+
+  .move__first {
+    width: 60%;
+  }
+
+  .move__title h2 {
+    width: 100%;
+  }
+
+  .move__text p {
+    width: 100%;
+  }
+
+  .move__image {
+    margin: 0px 10px 0px 0px;
+  }
+  .move__image img {
+    width: 100%;
+    height: 455px;
+    object-fit: cover;
+    object-position: -142px 0;
+    margin: 0 0 0 -30px;
+  }
+
+  .move__column {
+    margin: 0px 20px 0px 0px;
+  }
+  .move__column:last-child {
+    margin: 0;
+  }
+
+  .move-item__text p {
+    width: 98%;
+  }
+}
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .safety__safety {
+    margin: 0px 0px 60px 0px;
+  }
+
+  .safety__row {
+    margin: 0px 0px 30px 0px;
+  }
+
+  .safety__first {
+    width: 75%;
+    margin: 0px 10px 0px 0px;
+  }
+
+  .safety__title {
+    margin: 0px 0px 20px 0px;
+  }
+  .safety__title h2 {
+    width: 100%;
+  }
+
+  .safety__text {
+    margin: 0px 0px 20px 0px;
+  }
+  .safety__text p {
+    width: 100%;
+  }
+
+  .safety__image img {
+    width: 100%;
+    height: 442px;
+    object-fit: cover;
+    object-position: 0 0;
+  }
+
+  .safety__column {
+    margin: 0px 20px 0px 0px;
+  }
+  .safety__column:last-child {
+    margin: 0;
+  }
+
+  .safety-item__text p {
+    width: 100%;
+  }
+
+  .safety-item__title {
+    margin: 0px 0px 10px 0px;
+  }
+
+  .move__first {
+    width: 90%;
+    margin: 0px 0px 0px 10px;
+  }
+
+  .move__title {
+    margin: 0px 0px 20px 0px;
+  }
+  .move__title h2 {
+    width: 100%;
+  }
+
+  .move__title {
+    margin: 0px 0px 20px 0px;
+  }
+  .move__title h2 {
+    width: 100%;
+  }
+
+  .move__image {
+    margin: 0px 0px 0px 0px;
+  }
+  .move__image img {
+    width: 100%;
+    height: 455px;
+    object-fit: cover;
+    object-position: -300px 0;
+    margin: 0 0 0 -30px;
+  }
+
+  .move__column {
+    margin: 0px 20px 0px 0px;
+  }
+  .move__column:last-child {
+    margin: 0;
+  }
+
+  .move-item__text p {
+    width: 98%;
+  }
+}
+/* Landscape phones and portrait tablets, телефоны лопаты */
+@media (max-width: 767px) {
+  .safety {
+    padding: 0 15px;
+    overflow: hidden;
+    margin: 0px 0px 80px 0px;
+  }
+
+  .safety__commonrow {
+    flex-direction: column-reverse;
+  }
+
+  .safety__safety {
+    margin: 0px 0px 60px 0px;
+  }
+
+  .safety__row {
+    margin: 0px 0px 30px 0px;
+  }
+
+  .safety__first {
+    width: 100%;
+    margin: 0px 10px 0px 0px;
+  }
+
+  .safety__title {
+    margin: 0px 0px 20px 0px;
+  }
+  .safety__title h2 {
+    width: 100%;
+  }
+
+  .safety__text {
+    margin: 0px 0px 20px 0px;
+  }
+  .safety__text p {
+    width: 100%;
+  }
+
+  .safety__image {
+    overflow: hidden;
+    margin: 0px -270px 0px 0px;
+  }
+  .safety__image img {
+    width: 75%;
+    height: 425px;
+    object-fit: cover;
+    object-position: 0 0;
+  }
+
+  .safety__column {
+    margin: 0px 20px 0px 0px;
+  }
+  .safety__column:last-child {
+    margin: 0;
+  }
+
+  .safety-item__text p {
+    width: 100%;
+  }
+
+  .safety-item__title {
+    margin: 0px 0px 10px 0px;
+  }
+
+  .move__commonrow {
+    flex-direction: column-reverse;
+  }
+
+  .move__first {
+    width: 100%;
+    margin: 0px 0px 0px 10px;
+  }
+
+  .move__title {
+    margin: 0px 0px 20px 0px;
+  }
+  .move__title h2 {
+    width: 100%;
+  }
+
+  .move__title {
+    margin: 0px 0px 20px 0px;
+  }
+  .move__title h2 {
+    width: 100%;
+  }
+
+  .move__image {
+    text-align: center;
+    margin: 0px 0px 10px 0px;
+  }
+  .move__image img {
+    width: 80%;
+    height: 100%;
+    object-fit: contain;
+    object-position: 0 0;
+    margin: 0 0 0 0;
+  }
+
+  .move__column {
+    margin: 0px 20px 0px 0px;
+  }
+  .move__column:last-child {
+    margin: 0;
+  }
+
+  .move-item__text p {
+    width: 80%;
+  }
+
+  .move__text {
+    margin: 0px 0px 20px 0px;
+  }
+
+  .move__row {
+    margin: 0px 0px 30px 0px;
+  }
+}
+/* Portrait phones and smaller типа моего 6s */
+@media (max-width: 480px) {
+  .safety {
+    padding: 0 15px;
+    overflow: hidden;
+    margin: 0px 0px 40px 0px;
+  }
+
+  .safety__image img {
+    width: 75%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 0;
+  }
+}
+/* Iphone 5 */
+.finances {
+  padding: 0 15px;
+  margin: 0px 0px 100px 0px;
+  overflow: hidden;
+}
+
+.finances__row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 0px 20px 0px;
+}
+
+.finances__description {
+  padding: 50px 0px 0px 0px;
+  width: 50%;
+}
+
+.finances__title {
+  margin: 0px 0px 30px 0px;
+}
+
+.finances__text {
+  margin: 0px 0px 120px 0px;
+}
+.finances__text p {
+  width: 100%;
+}
+
+.finances-list__title {
+  margin: 0px 0px 30px 0px;
+}
+.finances-list__title h3 {
+  font-weight: 500;
+  color: #32325d;
+}
+
+.finances-link {
+  font-size: 20px;
+  font-weight: 300;
+  color: #32325d;
+  padding: 0px 0px 0px 35px;
+  margin: 0px 0px 30px 0px;
+  background: url("../img/icons/shape.svg") 0 0 no-repeat;
+}
+.finances-link:last-child {
+  margin: 0;
+}
+
+.finances__image {
+  width: 50%;
+  transform: translate(50px, 0px);
+}
+.finances__image img {
+  width: 100%;
+  height: 617px;
+  object-fit: cover;
+}
+
+.finances__row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 80px;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  .finances__row {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 0px 30px 0px;
+  }
+
+  .finances__description {
+    padding: 70px 0px 0px 0px;
+    width: 70%;
+  }
+
+  .finances__image img {
+    width: 100%;
+    height: 617px;
+    object-fit: cover;
+    object-position: -250px 0;
+  }
+
+  .finances__text {
+    margin: 0px 0px 140px 0px;
+  }
+}
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .finances__row {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 0px 30px 0px;
+  }
+
+  .finances__row2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 40px;
+  }
+
+  .finances__description {
+    padding: 70px 0px 0px 0px;
+    width: 50%;
+  }
+
+  .finances__image img {
+    width: 100%;
+    height: 617px;
+    object-fit: cover;
+    object-position: -250px 0;
+  }
+
+  .finances__text {
+    margin: 0px 0px 100px 0px;
+  }
+}
+/* Landscape phones and portrait tablets, телефоны лопаты */
+@media (max-width: 767px) {
+  .finances {
+    margin: 0px 0px 80px 0px;
+  }
+
+  .finances__row {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+    margin: 0px 0px 30px 0px;
+  }
+
+  .finances__row2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-row-gap: 20px;
+  }
+
+  .finances__image {
+    width: 100%;
+    text-align: center;
+    transform: translate(0px, 0px);
+  }
+  .finances__image img {
+    width: 80%;
+    height: 100%;
+    object-fit: contain;
+    object-position: 0 0;
+  }
+
+  .finances__description {
+    padding: 0px 0px 0px 0px;
+    width: 100%;
+  }
+
+  .finances__title {
+    margin: 0px 0px 20px 0px;
+  }
+
+  .finances__text {
+    margin: 0px 0px 40px 0px;
+  }
+
+  .finances-link {
+    font-size: 20px;
+    font-weight: 300;
+    color: #32325d;
+    padding: 0px 0px 0px 35px;
+    margin: 0px 0px 15px 0px;
+    background: url(../img/icons/shape.svg) 0 0 no-repeat;
+  }
+  .finances-link:last-child {
+    margin: 0px 0px 0 0px;
+  }
+
+  .finances-list__title {
+    margin: 0px 0px 20px 0px;
+  }
+}
+/* Portrait phones and smaller типа моего 6s n iphone X */
+@media (max-width: 480px) {
+  .finances {
+    margin: 0px 0px 40px 0px;
+  }
+
+  .finances__text {
+    margin: 0px 0px 20px 0px;
+  }
+
+  .finances-list__title {
+    margin: 0px 0px 15px 0px;
+  }
+
+  .finances__row {
+    margin: 0px 0px 20px 0px;
+  }
+
+  .finances__image {
+    margin: 0px 0px 10px 0px;
+  }
+}
+/* Iphone 5 */
+.start {
+  padding: 100px 15px 100px 15px;
+  background-color: #fafaff;
+}
+
+.start__image {
+  margin: 0px 0px 15px 0px;
+}
+
+.start__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.start__description {
+  margin: 0px 20px 0px 0px;
+}
+
+.start__title {
+  margin: 0px 0px 20px 0px;
+}
+
+.start__input {
+  display: flex;
+  align-items: center;
+  margin: 0px 15px 0px 0px;
+}
+.start__input input {
+  width: 560px;
+  height: 80px;
+  padding: 32px;
+  font-size: 23px;
+  font-weight: 300;
+  letter-spacing: 0.02px;
+  border-radius: 5px;
+  box-shadow: -6.7px 7.4px 20px 0 rgba(212, 212, 250, 0.2);
+}
+.start__input input::placeholder {
+  font-size: 23px;
+  font-weight: 300;
+  letter-spacing: 0.02px;
+  color: #8081ab;
+}
+.start__input a {
+  width: 140px;
+  display: flex;
+  align-items: center;
+  z-index: 10;
+  color: #845cff;
+  background-color: #fff;
+  height: 80px;
+  padding: 0 10px;
+  margin: 0px 0px 0px -130px;
+}
+.start__input a span {
+  margin: 0px 10px 0px 0px;
+}
+.start__input a:hover {
+  color: #563da4;
+}
+
+/* Landscape tablets and medium desktops */
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .start {
+    padding: 60px 15px;
+    background-color: #fafaff;
+  }
+
+  .start__description {
+    margin: 0px 0px 30px 0px;
+  }
+
+  .start__image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .start__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .start__input input {
+    width: 650px;
+  }
+}
+/* Landscape phones and portrait tablets, телефоны лопаты */
+@media (max-width: 767px) {
+  .start {
+    padding: 40px 15px;
+    background-color: #fafaff;
+  }
+
+  .start__description {
+    text-align: center;
+    margin: 0px 0px 20px 0px;
+  }
+
+  .start__image {
+    display: flex;
+    justify-content: center;
+  }
+
+  .start__row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .start__input {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+    margin: 0px 15px 0px 0px;
+  }
+
+  .start__input input {
+    width: 100%;
+  }
+}
+/* Portrait phones and smaller типа моего 6s */
+@media (max-width: 480px) {
+  .start__input {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0px 15px 0px 0px;
+  }
+
+  .start__input input {
+    width: 100%;
+    height: 60px;
+    padding: 15px;
+    font-size: 20px;
+  }
+
+  .start__input a {
+    width: 20px;
+    display: flex;
+    align-items: center;
+    z-index: 10;
+    background-color: #fff;
+    height: 60px;
+    padding: 0 5px;
+    margin: 0px 0px 0px -30px;
+  }
+  .start__input a span {
+    display: none;
+  }
+}
+.footer {
+  padding: 80px 40px 80px 15px;
+  background-color: #212240;
+}
+
+.footer__row {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 0px 80px 0px;
+}
+
+.footer__logo {
+  margin: 0px 0px 50px 0px;
+}
+
+.footer__numbers {
+  display: flex;
+  flex-direction: column;
+  margin: 0px 0px 50px 0px;
+}
+.footer__numbers a {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  transition-duration: 0.4s;
+  margin: 0px 0px 10px 0px;
+}
+.footer__numbers a:hover {
+  transition-duration: 0.4s;
+  color: rgba(255, 255, 255, 0.1);
+}
+.footer__numbers a:last-child {
+  margin: 0;
+}
+
+.footer__mail {
+  margin: 0px 0px 50px 0px;
+}
+.footer__mail a {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.8);
+  transition-duration: 0.4s;
+}
+.footer__mail a:hover {
+  transition-duration: 0.4s;
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.footer__links {
+  display: flex;
+  align-items: center;
+}
+.footer__links a {
+  font-size: 20px;
+  padding: 10px;
+  margin: 0px 10px 0px 0px;
+}
+.footer__links a:last-child {
+  margin: 0;
+}
+.footer__links a:hover {
+  color: #fff;
+}
+
+.footer__columns {
+  display: flex;
+}
+
+.footer__column {
+  margin: 0px 100px 0px 0px;
+}
+.footer__column:last-child {
+  margin: 0;
+}
+
+.footer-item {
+  display: flex;
+  flex-direction: column;
+}
+.footer-item a {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  transition-duration: 0.4s;
+  margin: 0px 0px 20px 0px;
+}
+.footer-item a:hover {
+  transition-duration: 0.4s;
+  color: rgba(255, 255, 255, 0.1);
+}
+
+.footer__subrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__inctext h4 {
+  font-size: 16px;
+  font-weight: 300;
+  color: #555377;
+}
+
+.footer_end {
+  color: #555377;
+  transition-duration: 0.4s;
+  margin: 0px 20px 0px 0px;
+}
+.footer_end:hover {
+  color: #9290bb;
+  transition-duration: 0.4s;
+}
+.footer_end:last-child {
+  margin: 0;
+}
+
+.icon-in {
+  color: #3d4677;
+  transition-duration: 0.4s;
+}
+.icon-in:hover {
+  color: #7d89c9;
+  transition-duration: 0.4s;
+}
+
+.icon-facebook {
+  color: #3d4677;
+  transition-duration: 0.4s;
+}
+.icon-facebook:hover {
+  color: #7d89c9;
+  transition-duration: 0.4s;
+}
+
+.icon-twitter {
+  color: #3d4677;
+  transition-duration: 0.4s;
+}
+.icon-twitter:hover {
+  color: #7d89c9;
+  transition-duration: 0.4s;
+}
+
+.icon-github {
+  color: #3d4677;
+  transition-duration: 0.4s;
+}
+.icon-github:hover {
+  color: #7d89c9;
+  transition-duration: 0.4s;
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .footer {
+    padding: 80px 15px;
+    background-color: #212240;
+  }
+
+  .footer__column {
+    margin: 0px 60px 0px 0px;
+  }
+}
+/* Portrait tablets and small desktops */
+@media (min-width: 768px) and (max-width: 991px) {
+  .footer {
+    padding: 80px 15px;
+    background-color: #212240;
+  }
+
+  .footer__description {
+    margin: 0px 50px 0px 0px;
+  }
+
+  .footer__column {
+    width: 30%;
+    margin: 0px 40px 0px 0px;
+  }
+  .footer__column:last-child {
+    margin: 0;
+  }
+}
+/* Landscape phones and portrait tablets, телефоны лопаты */
+@media (max-width: 767px) {
+  .footer {
+    padding: 40px 15px;
+    background-color: #212240;
+  }
+
+  .footer__row {
+    display: flex;
+    justify-content: space-between;
+    margin: 0px 0px 40px 0px;
+  }
+
+  .footer__description {
+    margin: 0px 20px 0px 0px;
+  }
+
+  .footer__column {
+    width: 30%;
+    margin: 0px 20px 0px 0px;
+  }
+  .footer__column:last-child {
+    margin: 0;
+  }
+
+  .footer__links a {
+    font-size: 20px;
+    padding: 10px;
+    margin: 0px 4px 0px 0px;
+  }
+
+  .footer-item a {
+    font-size: 14px;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    transition-duration: 0.4s;
+    margin: 0px 0px 20px 0px;
+  }
+}
+/* Portrait phones and smaller типа моего 6s */
+@media (max-width: 480px) {
+  .footer__row {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    margin: 0px 0px 40px 0px;
+  }
+
+  .footer__columns {
+    margin: 0px 0px 20px 0px;
+  }
+
+  .footer__logo {
+    margin: 0px 0px 20px 0px;
+  }
+
+  .footer__numbers {
+    margin: 0px 0px 20px 0px;
+  }
+
+  .footer__mail {
+    margin: 0px 0px 30px 0px;
+  }
+
+  .footer__links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer__row {
+    margin: 0px 0px 30px 0px;
+  }
+
+  .footer__subrow {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column-reverse;
+  }
+
+  .footer__privacy {
+    margin: 0px 0px 5px 0px;
+  }
+}
+/* Iphone 5 */
+@media (min-width: 768px) and (max-width: 991px) {
+  .title h2 {
+    font-size: 40px;
+    line-height: 45px;
+  }
+}
+@media (max-width: 767px) {
+  .title h2 {
+    font-size: 36px;
+    line-height: 33px;
+  }
+
+  .subtitle h3 {
+    font-size: 28px;
+  }
+}
+@media (max-width: 480px) {
+  .title h2 {
+    font-size: 28px;
+    line-height: 30px;
+  }
+
+  .text p {
+    line-height: 20px;
+    font-size: 16px;
+  }
+
+  .subtitle h3 {
+    font-size: 24px;
+  }
+}
+.container {
+  max-width: 1235px;
+  margin: 0 auto;
+}
+
+/* Large desktops and laptops */
+/* Landscape tablets and medium desktops */
+/* Portrait tablets and small desktops */
+/* Landscape phones and portrait tablets, телефоны лопаты */
+/* Portrait phones and smaller типа моего 6s */
+/* Iphone 5 */
